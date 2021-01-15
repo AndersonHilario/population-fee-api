@@ -1,6 +1,7 @@
 package com.anderson.populationfeeapi.service;
 
 import com.anderson.populationfeeapi.dto.StateDto;
+import com.anderson.populationfeeapi.mapper.StateMapper;
 import com.anderson.populationfeeapi.model.City;
 import com.anderson.populationfeeapi.model.State;
 import com.anderson.populationfeeapi.repository.CityRepository;
@@ -22,12 +23,12 @@ public class StateService {
     private StateRepository stateRepository;
 
     @Autowired
-    private StateDto stateDto;
+    private StateMapper stateMapper;
 
     @Transactional
     public List<StateDto> findAll() {
         Iterable<State> states = stateRepository.findAll();
         List<State> stateList = StreamSupport.stream(states.spliterator(), false).collect(Collectors.toList());
-        return stateDto.toDtoList(stateList);
+        return stateMapper.toDtoList(stateList);
     }
 }
