@@ -24,6 +24,7 @@ public class City {
     private Long population;
 
     @ManyToOne
+    @JoinColumn(name = "state_id")
     private State state;
 
     public City() {

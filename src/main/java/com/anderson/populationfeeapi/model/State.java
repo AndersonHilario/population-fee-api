@@ -4,6 +4,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -18,12 +19,16 @@ public class State {
     @ApiModelProperty(required = true)
     private String name;
 
+    @OneToMany(mappedBy = "state")
+    private List<City> cities;
+
     public State() {
     }
 
-    public State(Long id, String name) {
+    public State(Long id, String name, List<City> cities) {
         this.id = id;
         this.name = name;
+        this.cities = cities;
     }
 
     public Long getId() {
@@ -40,5 +45,13 @@ public class State {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<City> getCities() {
+        return cities;
+    }
+
+    public void setCities(List<City> cities) {
+        this.cities = cities;
     }
 }
