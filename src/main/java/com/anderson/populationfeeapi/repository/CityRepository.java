@@ -9,4 +9,6 @@ public interface CityRepository extends CrudRepository<City, Long> {
 
     List<City> findByStateId(Long stateId);
 
+    boolean existsByNameIgnoreCaseAndStateId(String name, Long stateid);
+
 }

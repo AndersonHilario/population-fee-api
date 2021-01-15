@@ -2,9 +2,7 @@ package com.anderson.populationfeeapi.service;
 
 import com.anderson.populationfeeapi.dto.StateDto;
 import com.anderson.populationfeeapi.mapper.StateMapper;
-import com.anderson.populationfeeapi.model.City;
 import com.anderson.populationfeeapi.model.State;
-import com.anderson.populationfeeapi.repository.CityRepository;
 import com.anderson.populationfeeapi.repository.StateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

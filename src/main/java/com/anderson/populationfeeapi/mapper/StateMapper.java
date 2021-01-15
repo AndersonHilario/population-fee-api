@@ -6,7 +6,6 @@ import com.anderson.populationfeeapi.model.PopulationFee;
 import com.anderson.populationfeeapi.model.State;
 import com.anderson.populationfeeapi.repository.CityRepository;
 import com.anderson.populationfeeapi.repository.PopulationFeeRepository;
-import org.mapstruct.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
