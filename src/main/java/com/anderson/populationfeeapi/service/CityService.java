@@ -30,7 +30,7 @@ public class CityService {
     public void deleteById(Long id) {
         Optional<City> optionalCity = cityRepository.findById(id);
 
-        if (optionalCity.isEmpty()) {
+        if (!optionalCity.isPresent()) {
             throw new NoSuchElementException(String.format("id : %o is invalid", id));
         }
 
